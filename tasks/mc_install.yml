@@ -5,6 +5,7 @@
     state: directory
     group: "{{ mc_user }}"
     owner: "{{ mc_user }}"
+    mode: '0755'
 
 - name: Get Minecraft JAR
   ansible.builtin.get_url:
@@ -18,8 +19,10 @@
     line: eula=true
     state: present
     create: yes
+    mode: '0644'
 
 - name: Configure server properties
   ansible.builtin.template:
     src: server.properties.j2
     dest: /opt/minecraft/server.properties
+    mode: '0644'

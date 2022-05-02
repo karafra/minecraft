@@ -8,6 +8,7 @@
   ansible.builtin.template:
     src: supervisor_mc.conf.j2
     dest: /etc/supervisor/conf.d/minecraft.conf
+    mode: '0644'
 
 - name: Start and enable Minecraft via Supervisor
   ansible.builtin.service:

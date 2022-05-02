@@ -21,6 +21,11 @@
     state: present
     regexp: "^{{ item.key }}"
     line: "{{ item.key }}={{ item.value }}"
+    create: yes
+    group: root
+    owner: root
+    mode: '0644'
   loop:
     - { key: "JAVA_HOME", value: "{{ java_home_value }}" }
     - { key: "PATH", value: "{{ ansible_env.PATH }}:{{ java_home_value }}/bin" }
+
