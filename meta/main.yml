@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Blake Smreker
   description: Installs a hardended Minecraft server on Linux
@@ -17,7 +18,7 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - 11
+        - bullseye
   # - name: SomePlatform
   #   versions:
   #   - all
