@@ -3,6 +3,12 @@ Role Name
 
 Installs and configures a hardened Minecraft 1.18.2 with Temurin OpenJDK 17 on Debian 11.
 
+Install using [Ansible Galaxy](https://galaxy.ansible.com/):
+
+```bash
+ansible-galaxy install bsmirks.hardened_minecraft
+```
+
 Requirements
 ------------
 
