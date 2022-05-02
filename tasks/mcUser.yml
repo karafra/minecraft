@@ -1,0 +1,16 @@
+---
+- name: Creating Minecraft user
+  ansible.builtin.user:
+    name: "{{ mcUser }}"
+    state: present
+    shell: /bin/bash
+
+- name: Adding Minecraft user to sudoers
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/designated
+    state: present
+    line: '{{ mcUser }}    ALL=(ALL)   NOPASSWD: ALL'
+    create: yes
+    owner: root
+    group: root
+    mode: 0440

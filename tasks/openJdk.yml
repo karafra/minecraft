@@ -1,0 +1,26 @@
+---
+- name: Import Temurin 17 OpenJDK GPG key
+  ansible.builtin.get_url:
+    url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    dest: /etc/apt/trusted.gpg.d/adoptium.asc
+
+- name: Add Eclipse Adoptium repository
+  ansible.builtin.apt_repository:
+    repo: deb https://packages.adoptium.net/artifactory/deb bullseye main
+    filename: adoptium
+
+- name: Install Temurin 17 OpenJDK
+  ansible.builtin.apt:
+    name: temurin-17-jdk
+    state: present
+    update_cache: yes
+
+- name: Set Java environment variables
+  ansible.builtin.lineinfile:
+    path: /etc/environment
+    state: present
+    regexp: "^{{ item.key }}"
+    line: "{{ item.key }}={{ item.value }}"
+  loop:
+    - { key: "JAVA_HOME", value: "{{ javaHomeValue }}" }
+    - { key: "PATH", value: "{{ ansible_env.PATH }}:{{ javaHomeValue }}/bin" }

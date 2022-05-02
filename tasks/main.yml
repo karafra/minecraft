@@ -1,0 +1,8 @@
+---
+- include: tasks/aptRequired.yml
+- include: tasks/mcUser.yml
+- include: tasks/openSsh.yml
+- include: tasks/ufw.yml
+- include: tasks/openJdk.yml
+- include: tasks/mcInstall.yml
+- include: tasks/mcService.yml

@@ -1,0 +1,16 @@
+---
+- name: Install Supervisor
+  ansible.builtin.apt:
+    name: supervisor
+    state: present
+
+- name: Create Minecraft service configuration file
+  ansible.builtin.template:
+    src: supervisor_mc.conf.j2
+    dest: /etc/supervisor/conf.d/minecraft.conf
+
+- name: Start and enable Minecraft via Supervisor
+  ansible.builtin.service:
+    name: supervisor
+    state: started
+    enabled: yes

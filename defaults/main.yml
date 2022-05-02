@@ -1,0 +1,5 @@
+---
+mcUser: floch
+javaHomeValue: /usr/lib/jvm/temurin-17-jdk-amd64
+serverPort: 26877
+sshPort: 2687

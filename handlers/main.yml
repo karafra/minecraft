@@ -1,0 +1,11 @@
+---
+# handlers file for minecraft-role
+- name: restart sshd
+  ansible.builtin.service:
+    name: sshd
+    state: restarted
+
+- name: restart supervisor
+  ansible.builtin.service:
+    name: supervisor
+    state: restarted

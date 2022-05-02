@@ -1,0 +1,11 @@
+---
+- name: Ensure system is up to date
+  ansible.builtin.apt:
+    upgrade: dist
+    update_cache: yes
+
+- name: Installing required packages
+  ansible.builtin.apt:
+    pkg:
+      - wget
+      - apt-transport-https

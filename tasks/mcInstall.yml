@@ -1,0 +1,25 @@
+---
+- name: Create /opt/minecraft
+  ansible.builtin.file:
+    path: /opt/minecraft
+    state: directory
+    group: "{{ mcUser }}"
+    owner: "{{ mcUser }}"
+
+- name: Get Minecraft JAR
+  ansible.builtin.get_url:
+    url: https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
+    dest: /opt/minecraft/minecraft_server.1.18.2.jar
+    mode: '0644'
+
+- name: Accept Minecraft EULA
+  ansible.builtin.lineinfile:
+    path: /opt/minecraft/eula.txt
+    line: eula=true
+    state: present
+    create: yes
+
+- name: Configure server properties
+  ansible.builtin.template:
+    src: server.properties.j2
+    dest: /opt/minecraft/server.properties

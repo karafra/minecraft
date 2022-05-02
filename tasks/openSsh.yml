@@ -1,0 +1,21 @@
+---
+- name: Configure OpenSSH
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regex: "^(#)?{{ item.key }}"
+    line: "{{ item.key }} {{ item.value }}"
+    state: present
+  loop:
+    - { key: "Port", value: "{{ sshPort }}" }
+    - { key: "PermitRootLogin", value: "no" }
+    - { key: "PubkeyAuthentication", value: "yes" }
+    - { key: "PasswordAuthentication", value: "no" }
+    - { key: "PermitEmptyPasswords", value: "no" }
+    - { key: "ChallengeResponseAuthentication", value: "no" }
+    - { key: "UsePAM", value: "yes" }
+    - { key: "X11Forwarding", value: "yes" }
+    - { key: "PrintMotd", value: "no" }
+    - { key: "AcceptEnv", value: "LANG LC_*" }
+    - { key: "Subsystem", value: "  sftp    /usr/lib/openssh/sftp-server" }
+  notify:
+    - restart sshd
