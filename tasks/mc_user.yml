@@ -10,7 +10,7 @@
     path: /etc/sudoers.d/designated
     state: present
     line: '{{ mc_user }}    ALL=(ALL)   NOPASSWD: ALL'
-    create: yes
+    create: true
     owner: root
     group: root
     mode: 0440

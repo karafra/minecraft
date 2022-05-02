@@ -16,7 +16,7 @@
   ansible.builtin.apt:
     name: temurin-17-jdk
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Set Java environment variables
   ansible.builtin.lineinfile:
@@ -24,7 +24,7 @@
     state: present
     regexp: "^{{ item.key }}"
     line: "{{ item.key }}={{ item.value }}"
-    create: yes
+    create: true
     group: root
     owner: root
     mode: '0644'

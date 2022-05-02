@@ -2,7 +2,7 @@
 - name: Ensure system is up to date
   ansible.builtin.apt:
     upgrade: dist
-    update_cache: yes
+    update_cache: true
 
 - name: Installing required packages
   ansible.builtin.apt:
