@@ -15,9 +15,9 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-  - name: Debian
-    versions:
-    - 11
+    - name: Debian
+      versions:
+      - 11
   # - name: SomePlatform
   #   versions:
   #   - all
