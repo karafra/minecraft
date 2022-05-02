@@ -3,6 +3,9 @@
   ansible.builtin.get_url:
     url: https://packages.adoptium.net/artifactory/api/gpg/key/public
     dest: /etc/apt/trusted.gpg.d/adoptium.asc
+    group: root
+    owner: root
+    mode: '0644'
 
 - name: Add Eclipse Adoptium repository
   ansible.builtin.apt_repository:
