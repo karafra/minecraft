@@ -1,7 +1,7 @@
 [program:minecraft]
 directory=/opt/minecraft/
 command=java -server -Xms2048M -Xmx2048M -XX:+UseG1GC -jar /opt/minecraft/minecraft_server.1.18.2.jar nogui
-user={{ mcUser }}
+user={{ mc_user }}
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/supervisor/error_minecraft.log

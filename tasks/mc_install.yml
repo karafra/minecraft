@@ -3,8 +3,8 @@
   ansible.builtin.file:
     path: /opt/minecraft
     state: directory
-    group: "{{ mcUser }}"
-    owner: "{{ mcUser }}"
+    group: "{{ mc_user }}"
+    owner: "{{ mc_user }}"
 
 - name: Get Minecraft JAR
   ansible.builtin.get_url:

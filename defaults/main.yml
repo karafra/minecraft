@@ -1,5 +1,5 @@
 ---
-mcUser: floch
-javaHomeValue: /usr/lib/jvm/temurin-17-jdk-amd64
-serverPort: 26877
-sshPort: 2687
+mc_user: floch
+java_home_value: /usr/lib/jvm/temurin-17-jdk-amd64
+server_port: 26877
+ssh_port: 2687

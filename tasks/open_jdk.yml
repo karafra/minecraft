@@ -22,5 +22,5 @@
     regexp: "^{{ item.key }}"
     line: "{{ item.key }}={{ item.value }}"
   loop:
-    - { key: "JAVA_HOME", value: "{{ javaHomeValue }}" }
-    - { key: "PATH", value: "{{ ansible_env.PATH }}:{{ javaHomeValue }}/bin" }
+    - { key: "JAVA_HOME", value: "{{ java_home_value }}" }
+    - { key: "PATH", value: "{{ ansible_env.PATH }}:{{ java_home_value }}/bin" }

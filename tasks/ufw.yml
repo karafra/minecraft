@@ -10,5 +10,5 @@
     proto: tcp
     port: "{{ item }}"
   with_items:
-    - " {{ serverPort }}"
-    - " {{ sshPort }}"
+    - " {{ server_port }}"
+    - " {{ ssh_port }}"

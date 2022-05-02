@@ -14,13 +14,17 @@ I originally created this role with my own system in mind. Until I make the publ
 Role Variables
 --------------
 
-* `mcUser: floch` - the user that gets created on the server that operates the Minecraft application.
-* `javaHomeValue: /usr/lib/jvm/temurin-17-jdk-amd64` - `JAVA_HOME` environment variable
-* `serverPort: 26877` - The Minecraft server port to use
-* `sshPort: 2687` - The SSH port to use
+Available variables and their default. More to be included soon for full configuration of the stack with Ansible.
+
+* `mc_user: floch` - the user that gets created on the server that operates the Minecraft application.
+* `java_home_value: /usr/lib/jvm/temurin-17-jdk-amd64` - `JAVA_HOME` environment variable
+* `server_port: 26877` - The Minecraft server port to use
+* `ssh_port: 2687` - The SSH port to use
 
 Dependencies
 ------------
+
+This list contains modules and/or roles that are not in the `ansible.builtin.*` namespace.
 
 - [Ansible community UFW module](https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html)
 
@@ -43,4 +47,4 @@ License
 Author Information
 ------------------
 
-bsmreker1@icloud.com
+Check out my [GitHub profile](https://github.com/bsmirks).
