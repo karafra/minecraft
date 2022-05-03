@@ -2,7 +2,17 @@
 - name: Create Minecraft server backup
   ansible.builtin.template:
     src: mcbackup.sh.j2
-    dest: /usr/local/bin/macbackup.sh
+    dest: /usr/local/bin/mcbackup.sh
     group: root
     owner: root
     mode: '0755'
+
+- name: Create server backup cron job
+  ansible.builtin.cron:
+    name: "backup minecraft server"
+    minute: "0"
+    hour: "18"
+    day: "0"
+    month: "0"
+    weekday: "0"
+    job: "/usr/local/bin/mcbackup.sh 2>&1 > /dev/null"
