@@ -16,4 +16,5 @@
     day: "*"
     month: "*"
     weekday: "*"
+    user: "{{ mc_user }}"
     job: "/usr/local/bin/mcbackup.sh 2>&1 > /dev/null"
