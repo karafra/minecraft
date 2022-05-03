@@ -10,6 +10,7 @@
 - name: Create server backup cron job
   ansible.builtin.cron:
     name: "backup minecraft server"
+    state: present
     minute: "0"
     hour: "18"
     day: "*"
