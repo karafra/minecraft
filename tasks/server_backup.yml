@@ -1,0 +1,8 @@
+---
+- name: Create Minecraft server backup
+  ansible.builtin.template:
+    src: mcbackup.sh.j2
+    dest: /usr/local/bin/macbackup.sh
+    group: root
+    owner: root
+    mode: '0755'

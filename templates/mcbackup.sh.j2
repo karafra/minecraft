@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# backup minecraft world
+#
+
+# the directory to back up
+backup_files="/opt/minecraft"
+
+# backup destination directory
+dest="{{ backup_dir }}"
+
+# create archive name
+day=$(date +%A)
+archive_file="$day.tar.gz"
+
+# Backup the files using tar.
+cd /opt && tar zcvf $dest/$archive_file $backup_files
