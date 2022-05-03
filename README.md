@@ -22,10 +22,12 @@ Role Variables
 
 Available variables and their default. More to be included soon for full configuration of the stack with Ansible.
 
-* `mc_user: floch` - the user that gets created on the server that operates the Minecraft application.
+* `backup_dir: /home/{{ mc_user }}/mcBackups` - the directory in which to place the server backups
+* `enable_backups: true` - whether or not to enable server backups managed by this role
+* `mc_user: floch` - the user that gets created on the server that operates the Minecraft application
 * `java_home_value: /usr/lib/jvm/temurin-17-jdk-amd64` - `JAVA_HOME` environment variable
-* `server_port: 26877` - The Minecraft server port to use
-* `ssh_port: 2687` - The SSH port to use
+* `server_port: 26877` - the Minecraft server port to use
+* `ssh_port: 2687` - the SSH port to use
 
 Dependencies
 ------------
