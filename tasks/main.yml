@@ -1,9 +1,15 @@
 ---
-- include: tasks/apt_required.yml
-- include: tasks/mc_user.yml
-- include: tasks/open_ssh.yml
-- include: tasks/ufw.yml
-- include: tasks/open_jdk.yml
-- include: tasks/mc_install.yml
-- include: tasks/mc_service.yml
-- include: tasks/server_backup.yml
+- name: Ensure system is up to date
+  ansible.builtin.apt:
+    upgrade: dist
+    update_cache: true
+
+- ansible.builtin.import_tasks: tasks/apt_required.yml
+- ansible.builtin.import_tasks: tasks/mc_user.yml
+- ansible.builtin.import_tasks: tasks/open_ssh.yml
+- ansible.builtin.import_tasks: tasks/ufw.yml
+- ansible.builtin.import_tasks: tasks/open_jdk.yml
+- ansible.builtin.import_tasks: tasks/mc_install.yml
+- ansible.builtin.import_tasks: tasks/mc_service.yml
+- ansible.builtin.import_tasks: tasks/server_backup.yml
+  when: enable_backups
