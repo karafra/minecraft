@@ -1,5 +1,7 @@
 ---
-mc_user: floch
+backup_dir: /home/{{ mc_user }}/mcBackups
+enable_backups: true
 java_home_value: /usr/lib/jvm/temurin-17-jdk-amd64
+mc_user: floch
 server_port: 26877
 ssh_port: 2687

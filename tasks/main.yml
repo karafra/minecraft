@@ -6,3 +6,4 @@
 - include: tasks/open_jdk.yml
 - include: tasks/mc_install.yml
 - include: tasks/mc_service.yml
+- include: tasks/server_backup.yml
