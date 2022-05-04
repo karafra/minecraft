@@ -4,12 +4,26 @@
     upgrade: dist
     update_cache: true
 
-- ansible.builtin.import_tasks: tasks/apt_required.yml
-- ansible.builtin.import_tasks: tasks/mc_user.yml
-- ansible.builtin.import_tasks: tasks/open_ssh.yml
-- ansible.builtin.import_tasks: tasks/ufw.yml
-- ansible.builtin.import_tasks: tasks/open_jdk.yml
-- ansible.builtin.import_tasks: tasks/mc_install.yml
-- ansible.builtin.import_tasks: tasks/mc_service.yml
-- ansible.builtin.import_tasks: tasks/server_backup.yml
+- name: Configure Minecraft application user
+  ansible.builtin.import_tasks: tasks/mc_user.yml
+
+- name: Configure OpenSSH
+  ansible.builtin.import_tasks: tasks/open_ssh.yml
+  when: manage_openssh
+
+- name: Configure UFW
+  ansible.builtin.import_tasks: tasks/ufw.yml
+
+- name: Install and configure Temurin 17 OpenJDK
+  ansible.builtin.import_tasks: tasks/open_jdk.yml
+
+- name: Install Minecraft server
+  ansible.builtin.import_tasks: tasks/mc_install.yml
+
+- name: Configure the Minecraft service via Supervisor
+  ansible.builtin.import_tasks: tasks/mc_service.yml
+  when: manage_service
+
+- name: Configure local server backups
+  ansible.builtin.import_tasks: tasks/server_backup.yml
   when: enable_backups

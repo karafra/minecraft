@@ -4,7 +4,7 @@
 #
 
 # the directory to back up
-backup_files="/opt/minecraft"
+backup_files="{{ install_dir }}"
 
 # backup destination directory
 dest="{{ backup_dir }}"
@@ -13,5 +13,9 @@ dest="{{ backup_dir }}"
 day=$(date +%A)
 archive_file="$day.tar.gz"
 
-# Backup the files using tar.
+# backup the files using tar
+# TODO parameterize /opt below because of $install_dir in Ansible
 cd /opt && tar zcvf $dest/$archive_file $backup_files
+
+# delete backups older than `n` days
+find {{ backup_dir }}/ -name '*.tar.gz' -mtime +{{ backup_retention }} -exec rm {} \; > /dev/null 2>&1

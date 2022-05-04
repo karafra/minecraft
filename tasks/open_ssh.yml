@@ -7,15 +7,15 @@
     state: present
   loop:
     - {key: "Port", value: "{{ ssh_port }}"}
-    - {key: "PermitRootLogin", value: "no"}
-    - {key: "PubkeyAuthentication", value: "yes"}
-    - {key: "PasswordAuthentication", value: "no"}
-    - {key: "PermitEmptyPasswords", value: "no"}
-    - {key: "ChallengeResponseAuthentication", value: "no"}
-    - {key: "UsePAM", value: "yes"}
-    - {key: "X11Forwarding", value: "yes"}
-    - {key: "PrintMotd", value: "no"}
-    - {key: "AcceptEnv", value: "LANG LC_*"}
-    - {key: "Subsystem", value: "  sftp    /usr/lib/openssh/sftp-server"}
+    - {key: "PermitRootLogin", value: "{{ permit_root_login }}"}
+    - {key: "PubkeyAuthentication", value: "{{ pubkey_authentication }}"}
+    - {key: "PasswordAuthentication", value: "{{ password_authentication }}"}
+    - {key: "PermitEmptyPasswords", value: "{{ permit_empty_passwords }}"}
+    - {key: "ChallengeResponseAuthentication", value: "{{ challenge_response_authentication }}"}
+    - {key: "UsePAM", value: "{{ use_pam }}"}
+    - {key: "X11Forwarding", value: "{{ x11_forwarding }}"}
+    - {key: "PrintMotd", value: "{{ print_motd }}"}
+    - {key: "AcceptEnv", value: "{{ accept_env }}"}
+    - {key: "Subsystem", value: "{{ subsystem }}"}
   notify:
     - restart sshd
