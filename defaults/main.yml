@@ -1,12 +1,10 @@
 ---
-accept_env: LANG LC_*
 allow_flight: false
 allow_nether: true
 broadcast_rcon_to_ops: true
 backup_dir: /home/{{ mc_user }}/mcBackups
 backup_retention: 7
 broadcast_console_to_ops: true
-challenge_response_authentication: "no"
 difficulty: easy
 enable_backups: true
 enable_command_block: false
@@ -30,7 +28,6 @@ java_min_memory: 2048M
 level_name: vibin
 level_seed:
 level_type: default
-manage_openssh: true
 manage_service: true
 max_players: 20
 max_tick_time: 60000
@@ -40,13 +37,8 @@ motd: Welcome to your doom, peasant!
 network_compression_threshold: 256
 online_mode: true
 op_permission_level: 4
-password_authentication: "no"
-permit_empty_passwords: "no"
-permit_root_login: "no"
 player_idle_timeout: 0
 prevent_proxy_connections: false
-print_motd: "no"
-pubkey_authentication: "yes"
 pvp_enable: true
 query_port: 25565
 rate_limit: 0
@@ -63,12 +55,8 @@ spawn_animals: true
 spawn_monsters: true
 spawn_npcs: true
 spawn_protection: 16
-ssh_port: 2687
-subsystem: "  sftp    /usr/lib/openssh/sftp-server"
 sync_chunk_writes: true
 text_filtering_config:
 use_native_transport: true
-use_pam: "yes"
 view_distance: 10
 white_list_enable: true
-x11_forwarding: "yes"

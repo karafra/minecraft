@@ -7,13 +7,6 @@
 - name: Configure Minecraft application user
   ansible.builtin.import_tasks: tasks/mc_user.yml
 
-- name: Configure OpenSSH
-  ansible.builtin.import_tasks: tasks/open_ssh.yml
-  when: manage_openssh
-
-- name: Configure UFW
-  ansible.builtin.import_tasks: tasks/ufw.yml
-
 - name: Install and configure Temurin 17 OpenJDK
   ansible.builtin.import_tasks: tasks/open_jdk.yml
 

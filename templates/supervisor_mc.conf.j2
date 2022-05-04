@@ -1,3 +1,5 @@
+# {{ ansible_managed }}
+
 [program:minecraft]
 directory={{ install_dir }}
 command=java -server -Xms{{ java_min_memory }} -Xmx{{ java_max_memory }} -XX:+UseG1GC -jar {{ install_dir }}/minecraft_server.1.18.2.jar nogui
