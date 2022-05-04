@@ -1,5 +1,4 @@
 ---
-# handlers file for minecraft-role
 - name: restart supervisor
   ansible.builtin.service:
     name: supervisor
