@@ -26,3 +26,4 @@
     src: server.properties.j2
     dest: "{{ install_dir }}/server.properties"
     mode: '0644'
+  notify: restart supervisor
