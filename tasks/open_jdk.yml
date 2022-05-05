@@ -6,11 +6,13 @@
     group: root
     owner: root
     mode: '0644'
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Add Eclipse Adoptium repository
   ansible.builtin.apt_repository:
     repo: deb https://packages.adoptium.net/artifactory/deb bullseye main
     filename: adoptium
+  when: ansible_facts['os_family'] == 'Debian'
 
 - name: Install Temurin 17 OpenJDK
   ansible.builtin.apt:

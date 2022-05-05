@@ -1,6 +1,6 @@
 ---
 - name: Install Supervisor
-  ansible.builtin.apt:
+  ansible.builtin.package:
     name: supervisor
     state: present
 
