@@ -29,12 +29,12 @@ Example Playbook
   become: yes
   roles:
     - role: bsmirks.minecraft
-	  vars:
-	    backup_retention: 7
-	    difficulty: easy
-	    level_name: myWorld
-	    motd: Welcome to your doom, peasant!
-	    server_port: 25565
+      vars:
+	backup_retention: 7
+	difficulty: easy
+	level_name: myWorld
+	motd: Welcome to your doom, peasant!
+	server_port: 25565
 ```
 
 License
