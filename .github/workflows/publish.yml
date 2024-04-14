@@ -17,4 +17,4 @@ jobs:
         with:
           galaxy-api-key: ${{ secrets.GALAXY_API_KEY }}
           galaxy-version: ${{ inputs.version_to_publish }}
-          role-name: ${{ steps.role-name.outputs.rolename }}
+          role-name: minecraft
