@@ -1,8 +1,10 @@
+name: Publish to Ansible galaxy
+
 on:
   workflow_dispatch:
     inputs:
-      version_to_publish:
-        description: What version tag to publish to ansible galaxy
+      branch_to_publish:
+        description: What branch to publish
         required: true
         type: string
 
@@ -11,7 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Show version
-        run: echo ${{ github.events.inputs.version_to_publish }}
+        run: echo ${{ github.events.inputs.branch_to_publish }}
       - name: galaxy
         uses: ome/action-ansible-galaxy-publish@main
         with:
