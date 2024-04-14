@@ -18,5 +18,5 @@ jobs:
         uses: ome/action-ansible-galaxy-publish@main
         with:
           galaxy-api-key: ${{ secrets.GALAXY_API_KEY }}
-          galaxy-version: ${{ inputs.version_to_publish }}
+          galaxy-version: ${{ inputs.branch_to_publish }}
           role-name: minecraft
