@@ -4,11 +4,14 @@ on:
       version_to_publish:
         description: What version tag to publish to ansible galaxy
         required: true
+        type: string
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
+      - name: Show version
+        run: echo ${{ github.events.inputs.version_to_publish }}
       - name: galaxy
         uses: ome/action-ansible-galaxy-publish@main
         with:
