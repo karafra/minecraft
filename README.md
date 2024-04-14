@@ -6,7 +6,7 @@ An Ansible role for installing and configuring Minecraft server 1.18.2 using Tem
 Install using [Ansible Galaxy](https://galaxy.ansible.com/):
 
 ```bash
-ansible-galaxy install bsmirks.minecraft
+ansible-galaxy install karafra.minecraft
 ```
 
 Requirements
@@ -28,7 +28,7 @@ Example Playbook
 - hosts: foo.bar.com
   become: yes
   roles:
-    - role: bsmirks.minecraft
+    - role: karafra.minecraft
       vars:
         backup_retention: 7
         difficulty: easy
@@ -45,4 +45,4 @@ License
 Author Information
 ------------------
 
-Check out my [GitHub profile](https://github.com/bsmirks).
+Check out my [GitHub profile](https://github.com/karafra).

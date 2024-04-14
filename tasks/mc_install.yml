@@ -9,8 +9,9 @@
 
 - name: Get Minecraft JAR
   ansible.builtin.get_url:
-    url: https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
-    dest: "{{ install_dir }}/minecraft_server.1.18.2.jar"
+
+    url: {{ minecraft_server_url }}
+    dest: "{{ install_dir }}/minecraft_server-{{ minecraft_version }}.jar"
     mode: '0644'
 
 - name: Accept Minecraft EULA
